@@ -1,4 +1,7 @@
+mod constants;
+mod errors;
 mod parser;
+mod storage;
 use clap::Parser;
 use parser::*;
 
