@@ -1,4 +1,3 @@
-use core::error::Error;
 use std::{
     fs::{self, File},
     io::{BufReader, Read},
@@ -24,7 +23,7 @@ pub enum Commands {
 }
 
 //key can be dropped after read.
-pub fn get_item(key: String) -> Result<(), Error> {
+pub fn get_item(key: String) -> Result<(), Box<dyn std::error::Error>> {
     // read .dbdata/primindex which is gonna be an index
 
     //propagate
