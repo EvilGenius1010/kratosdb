@@ -2,3 +2,5 @@ kratosdb/target/
 
 target/
 
+.cargo/
+

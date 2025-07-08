@@ -6,3 +6,9 @@ edition = "2021"
 [dependencies]
 clap = { version = "4.5.18", features = ["derive"] }
 
+[workspace]
+members=[
+  "level_1",
+  "src",
+  "level_2"
+]

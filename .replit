@@ -1,0 +1,11 @@
+hidden = ["target", ".cargo"]
+
+entrypoint = "src/main.rs"
+modules = ["rust-stable"]
+
+[nix]
+channel = "stable-24_05"
+packages = ["cliquer"]
+
+[gitHubImport]
+requiredFiles = [".replit"]
