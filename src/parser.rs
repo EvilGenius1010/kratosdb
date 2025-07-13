@@ -1,7 +1,6 @@
-use core::error::Error;
 use std::{
     fs::{self, File},
-    io::{BufReader, Read},
+    io::{BufReader, Error, Read},
 };
 
 use clap::{Parser, Subcommand};
