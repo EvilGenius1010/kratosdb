@@ -21,12 +21,22 @@ impl<T> HashSkipList<T> {
     pub fn insert(&mut self, val: T) -> Self {
         if self.lists[0].is_some() {
             //check if empty
-            self.lists[0]
+            self.lists[0].insert(LinkedList{
+                val:val,
+                next:None
+            });
+            self;
             //sort and push
         }
 
         Self {
             lists: [(); 4].map(|_| None),
         }
+    }
+    //optimise to remove vector and max size is 4
+    fn determine_level()->u8{
+        let bits=rand::random::<u8>();
+        bits.trai
+        
     }
 }
