@@ -1,4 +1,5 @@
 const MAXLAYERS: usize = 4;
+use crate::helper::generate_u8;
 
 //enforce what types can be passed to this
 pub struct LinkedList<V> {
@@ -20,11 +21,16 @@ impl<T> HashSkipList<T> {
 
     pub fn insert(&mut self, val: T) -> Self {
         if self.lists[0].is_some() {
+            let levels = generate_u8().leading_zeros();
+
+            for i in 0..levels {
+                let i = i as usize;
+                self.lists[i].insert(LinkedList { val, next: None });
+            }
+
             //check if empty
-            self.lists[0].insert(LinkedList{
-                val:val,
-                next:None
-            });
+            // self.lists[0].insert(LinkedList { val, next: None });
+
             self;
             //sort and push
         }
@@ -33,10 +39,8 @@ impl<T> HashSkipList<T> {
             lists: [(); 4].map(|_| None),
         }
     }
-    //optimise to remove vector and max size is 4
-    fn determine_level()->u8{
-        let bits=rand::random::<u8>();
-        bits.trai
-        
-    }
+    // //optimise to remove vector and max size is 4
+    // fn determine_level()->u8{
+
+    // }
 }
