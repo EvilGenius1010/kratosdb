@@ -18,14 +18,16 @@ impl<T> HashSkipList<T> {
             lists: [(); 4].map(|_| None),
         }
     }
-
     pub fn insert(&mut self, val: T) -> Self {
         if self.lists[0].is_some() {
             let levels = generate_u8().leading_zeros();
 
             for i in 0..levels {
                 let i = i as usize;
-                self.lists[i].insert(LinkedList { val, next: None });
+                self.lists[i].insert(LinkedList {
+                    val: val,
+                    next: None,
+                });
             }
 
             //check if empty

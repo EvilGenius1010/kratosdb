@@ -26,8 +26,8 @@ pub fn generate_u8() -> u8 {
         .unwrap()
         .as_nanos() as u8;
 
-    x ^= x << 13;
-    x ^= x >> 7;
-    x ^= x << 17;
+    x ^= x << 3;
+    x ^= x >> 2;
+    x ^= x << 5;
     x
 }
